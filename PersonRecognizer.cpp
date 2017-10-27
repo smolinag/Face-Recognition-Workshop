@@ -118,8 +118,8 @@ void PersonRecognizer::adjustImage(Mat face, Mat &faceAdj){
 
 	//Crop image
 	if (IM_CROP > 0 && IM_CROP < 1){
-		size_t cropMarginRows = (int)(round((IM_CROP / 6) * (double)face.rows));
-		size_t cropMarginCols = (int)(round((IM_CROP / 2) * (double)face.cols));
+		size_t cropMarginRows = (int)(std::floor((IM_CROP / 6) * (double)face.rows));
+		size_t cropMarginCols = (int)(std::floor((IM_CROP / 2) * (double)face.cols));
 		Rect cropWindow = Rect(Point(cropMarginCols, cropMarginRows), Point(face.cols - cropMarginCols, face.rows - cropMarginRows));
 		temp = face(cropWindow);
 	}

@@ -313,8 +313,8 @@ void DatasetReader::rescaleImage(Mat &im){
 
 	if (imArea > maxArea){
 		double scaleFactor = sqrt(maxArea / imArea);
-		int newRows = int(round(scaleFactor * (double)im.rows));
-		int newCols = int(round(scaleFactor * (double)im.cols));
+		int newRows = int(std::floor(scaleFactor * (double)im.rows));
+		int newCols = int(std::floor(scaleFactor * (double)im.cols));
 		resize(im, im, cv::Size(newCols, newRows), 0, 0, cv::INTER_CUBIC);
 	}
 }
@@ -389,7 +389,7 @@ void DatasetReader::findRowsAndColsForCollage(size_t numImgs, cv::Size imSize, c
 	if (collageSize.width > maxCollageWidth){
 
 		double rsize = (double)maxCollageWidth / (double)collageSize.width;
-		collageSize.height = (size_t)round(rsize * collageSize.height);
+		collageSize.height = (size_t)std::floor(rsize * collageSize.height);
 		collageSize.width = maxCollageWidth;		
 	}
 }
