@@ -1,0 +1,3 @@
+http://cswww.essex.ac.uk/mv/allfaces/index.html
+
+The data is held in four directories ( faces94 ,  faces95 ,  faces96 ,  grimace ),  in order of increasing difficulty. Faces96 and grimace are the most difficult, though for  two different reasons (variation of background and scale, versus extreme variation of expressions).
